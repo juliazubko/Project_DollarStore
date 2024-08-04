@@ -1,0 +1,90 @@
+<main>
+  <section id="signup">
+    <div class="signup-form">
+      <form (ngSubmit)="register()" #signupForm="ngForm">
+        <div class="form-group">
+          <label for="name">Namn:*</label>
+          <input type="text" id="name" name="name" [(ngModel)]="name" #nameField="ngModel" required>
+          <div *ngIf="nameField.invalid && nameField.touched" class="error-message">
+            Namn är obligatoriskt.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Födelsedatum:*</label>
+          <input type="date" id="dob" name="dob" [(ngModel)]="dob" #dobField="ngModel" required>
+          <div *ngIf="dobField.invalid && dobField.touched" class="error-message">
+            Födelsedatum är obligatoriskt.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-post:*</label>
+          <input type="email" 
+                 id="email" 
+                 name="email" 
+                 [(ngModel)]="email" 
+                 (ngModelChange)="email = email.toLowerCase()" 
+                 #emailField="ngModel" 
+                 required
+                 pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                 [class.invalid]="emailField.touched && emailField.invalid">
+          <div *ngIf="emailField.touched && emailField.errors?.['required']" class="error-message">
+            E-post är obligatoriskt.
+          </div>
+          <div *ngIf="emailField.touched && emailField.errors?.['pattern']" class="error-message">
+            E-post måste vara en giltig e-postadress.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Lösenord:*</label>
+          <input type="password" id="password" name="password" [(ngModel)]="password" #passwordField="ngModel" required>
+          <div *ngIf="passwordField.invalid && passwordField.touched" class="error-message">
+            Lösenord är obligatoriskt.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Bekräfta lösenord:*</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" #confirmPasswordField="ngModel" required>
+          <div *ngIf="confirmPasswordField.invalid && confirmPasswordField.touched" class="error-message">
+            Bekräfta lösenord är obligatoriskt.
+          </div>
+        </div>
+
+        <!-- Simple error messages for password mismatch & strength -->
+        <div *ngIf="!isPasswordMatched" class="error-message">
+          Lösenorden matchar inte.
+        </div>
+        <div *ngIf="!isStrongPassword && password.length > 0" class="error-message">
+          För svagt lösenord. Det måste ha en versal, en gemen, ett nummer och vara minst 8 tecken långt.
+        </div>
+
+        <!-- Checkboxes -->
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="privacyPolicy" name="privacyPolicy">
+            Jag har läst och förstått&nbsp;<a href="#privacy">Integritetspolicy</a>.
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="termsOfService" name="termsOfService">
+            Jag har läst och accepterar&nbsp;<a href="#terms">Användarvillkor</a>.
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="offers" name="offers">
+            Jag vill få erbjudanden / prenumerera på nyhetsbrev.
+          </label>
+        </div>
+
+        <button type="submit" class="signup-btn" [disabled]="!signupForm.valid || isSubmitting">Registrera</button>
+      </form>
+    </div>
+  </section>
+</main>

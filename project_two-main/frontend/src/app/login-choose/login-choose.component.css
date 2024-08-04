@@ -1,0 +1,147 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffdfdaf;
+    padding:15px;
+    height: 90vh;
+    width: calc(100% - 5px);
+    margin: 0 auto;
+  }
+
+
+.login-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+
+.login-form input[type="email"].invalid,
+.login-form input[type="password"].invalid{
+    margin-bottom: 0;
+}
+
+.login-form input.invalid {
+    border: 2px solid #ff0000;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 20px;
+}
+
+.alternative-login {
+    display: block;
+    margin-bottom: 20px;
+    color: #0070c9;
+    text-decoration: none;
+}
+
+.alternative-login:hover {
+    text-decoration: underline;
+}
+
+.forgot-password {
+    display: block;
+    margin-bottom: 20px;
+    color: #0070c9;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.continue-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #fc0505;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.continue-btn:hover, .continue-btn[disabled]  {
+    background-color: #fc4d4dd7;
+}
+
+.register-prompt {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.option-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+    border: 2px solid #fc0505;
+    border-radius: 25px;
+    color: #fc0505;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.option-btn:hover {
+    background-color: #f08d8dd7;
+}
+
+
+@media (max-width: 450px) {
+    .login-form {
+        width: 100%;
+        padding: 25px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: auto;
+    }
+
+    .login-form label {
+        margin-bottom: 5px;
+    }
+
+    .login-form input[type="email"],
+    .login-form input[type="password"] {
+        padding: 8px;
+    }
+
+    .error-message,
+    .alternative-login,
+    .forgot-password,
+    .checkbox,
+    .continue-btn,
+    .option-btn {
+        margin-bottom: 15px;
+    }
+
+    .continue-btn,
+    .option-btn {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .register-prompt {
+        margin-top: 20px;
+        display:inline-block;
+    }
+}

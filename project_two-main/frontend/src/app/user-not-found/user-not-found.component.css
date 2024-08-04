@@ -1,0 +1,71 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  z-index: 1500;
+}
+
+.user-not-found-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+  z-index: 1000;
+  width: 400px; 
+  text-align: center;
+}
+
+.user-not-found-dialog h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.user-not-found-dialog p {
+  font-size: 18px;
+  color: #7d7d7d;
+}
+
+.user-not-found-dialog button {
+  background-color: #ff4c4c; 
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease; 
+}
+
+.user-not-found-dialog button:hover {
+  background-color: #ff0000; 
+}
+
+
+@media (max-width: 430px) {
+  .user-not-found-dialog {
+    width: 85%; 
+    padding: 15px; 
+  }
+
+  .user-not-found-dialog h2, .user-not-found-dialog p{
+    font-size: 20px; 
+    display: flex;
+    margin-bottom: 15px;
+    flex-direction: column;  
+  }  
+
+  .user-not-found-dialog button {
+    font-size: 20px; 
+    font-weight: bolder;
+  }
+}

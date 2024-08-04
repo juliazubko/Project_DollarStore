@@ -1,0 +1,49 @@
+services:
+  db:
+    container_name: postgres
+    image: postgres
+    environment: 
+      POSTGRES_USER: dollarstore
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: customer
+      PGDATA: /data/postgres
+    volumes:
+      - db:/data/postgres
+    ports:
+      - "5332:5432"
+    networks:
+      - db
+    restart: unless-stopped
+  
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/customer
+      SPRING_DATASOURCE_USERNAME: dollarstore
+      SPRING_DATASOURCE_PASSWORD: password
+    depends_on:
+      - db
+    networks:
+      - db
+    restart: unless-stopped
+  
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "4200:4200"
+    networks:
+      - frontend
+    restart: unless-stopped
+
+volumes:
+  db:
+
+networks:
+  db:
+    driver: bridge
+  frontend:
+    driver: bridge

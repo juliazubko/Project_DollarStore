@@ -1,0 +1,151 @@
+.btn.upload-first {
+  padding: 10px 20px;
+}
+
+.table.table-striped.table-hover {
+  margin-bottom: 60px;
+}
+
+.text-center.mt-3 {
+  margin-bottom: 200px;
+}
+
+.btn-red, .upload-first {
+  background-color: red;
+  border-color: red;
+  color: white;
+}
+
+.btn-red:hover, .upload-first:hover {
+  background-color: darkred;
+  border-color: darkred;
+}
+
+.btn-black, .upload-first {
+  background-color: rgb(0, 0, 0);
+  border-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.btn-black:hover, .upload-first:hover {
+  background-color: rgb(36, 29, 29);
+  border-color: rgb(35, 31, 31);
+}
+
+.btn-yellow, .upload-first {
+  background-color: #ffee00;
+  border-color: #ffee00;
+  color: white;
+}
+
+.btn-yellow:hover, .upload-first:hover {
+  background-color: #8b7100;
+  border-color: #8b7100;
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* above other content */
+}
+
+.modal-content {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  overflow-y: auto; /* can scroll */
+  transition: transform 0.3s ease-out;
+  resize: both; /* can drag to resize the modal window */
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.close {
+  align-self: flex-end;
+  font-size: 34px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.pagination-controls-custom {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.pagination-controls-custom .ngx-pagination {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+
+@media (max-width: 599px) {
+  .upload-section input[type="file"],
+  .upload-section input[type="text"],
+  .upload-section input[type="date"],
+  .upload-section input[type="number"],
+  .upload-section .form-control, 
+  .upload-section button, 
+  .upload-section h3 {
+      width: auto; 
+      margin-right: 15px;
+      margin-bottom: 15px; 
+      text-align: left; 
+  }    
+  .table, .table tbody, .table td, .table tr {
+    display: block;
+    width: auto;  
+    margin-right: 15px;
+  }   
+  
+  .table thead tr {
+    display: none;
+  }   
+
+  .table td {
+    display: flex;
+    justify-content: space-between; 
+    padding: 10px;
+  }
+
+  td:nth-of-type(1):before {
+    content: "Butik: ";
+    font-weight: bolder;
+  }  
+
+  td:nth-of-type(2):before {
+    content: "Datum: ";
+    font-weight: bolder;
+  }   
+
+  td:nth-of-type(3):before {
+    content: "Tid: ";
+    font-weight: bolder;
+  }     
+
+  td:nth-of-type(4):before {
+    content: "Kvittonummer: ";
+    font-weight: bolder;
+  }    
+
+  td:nth-of-type(5):before {
+    content: "Total (SEK): ";
+    font-weight: bolder;
+  }   
+}

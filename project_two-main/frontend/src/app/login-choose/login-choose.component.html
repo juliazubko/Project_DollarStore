@@ -1,0 +1,61 @@
+<main>  
+    <section id="login">
+        <div class="login-form"> <!--login form -->
+            <form id="loginForm" #form="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
+                <label for="email">E-post:* </label>
+                <input  type="email" 
+                        id="email" 
+                        name="email" 
+                        [(ngModel)]="email" 
+                        #emailField="ngModel"  
+                        required
+                        pattern = "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+                        [class.invalid]="emailField.touched && emailField.invalid"
+                        >  
+                        <!-- email regex / pattern from: https://regexr.com/3e48o. 
+                             adjust, if needed-->
+                <div *ngIf="emailField.touched && emailField.errors?.['required']" 
+                      class="error-message">
+                    E-post är obligatoriskt.
+                </div>
+                <div *ngIf="emailField.touched && emailField.errors?.['pattern']" 
+                      class="error-message">
+                    Ange en giltig e-postadress.
+                </div>
+
+                <label for="password">Lösenord:* </label>
+                <input  type="password" 
+                        id="password" 
+                        name="password" 
+                        [(ngModel)]="password" 
+                        #passwordField="ngModel" 
+                        required
+                        [class.invalid]="passwordField.touched && passwordField.invalid"
+                        >
+                <div *ngIf="passwordField.touched && passwordField.errors?.['required']" 
+                      class="error-message">
+                    Lösenord är obligatoriskt.
+                </div>
+
+                <a routerLink="/forgot" class="forgot-password">Glömt ditt lösenord?</a>
+                <a routerLink="/bankid" class="alternative-login">Log in med BankID</a> 
+
+                <button type="submit" 
+                        class="continue-btn"
+                        [disabled]="!form.valid || isSubmitting">Fortsätt</button>
+            </form>
+            <div class="register-prompt">
+                Har du inget konto än? Skapa ett här: 
+            </div>
+            <button type="button" class="option-btn" (click)="register()">Registrera</button>
+        </div><!-- end of log in form -->
+    </section>
+</main>
+
+
+<app-user-not-found 
+    *ngIf="showUserNotFound" 
+    [message]="userNotFoundMessage" 
+    (dismissEvent)="onDismiss()"> 
+</app-user-not-found>

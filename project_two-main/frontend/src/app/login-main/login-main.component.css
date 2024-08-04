@@ -1,0 +1,9 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; 
+    background-color: #b8b4b4;
+    width: 99.50%; 
+    margin-left: 0.25%;
+}

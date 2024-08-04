@@ -1,0 +1,50 @@
+<div class="header-container">
+  <div class="top-bar">
+
+    <img src="assets/1000px_logo_dollarstore.webp" alt="Dollarstore Logo" class="logo">
+
+    <div class="search-container"> <!-- combined search field + icon -->
+      <input type="text" placeholder="Sök i produkter & kategorier..." class="search-input">
+      <i class="fas fa-search search-icon" ></i>
+    </div><!-- end of search field + icon  -->
+    
+    <div class="login-container">
+      <a *ngIf="!authService.isLoggedIn()" (click)="router.navigate(['/loginchoose'])" class="icon-link">
+        <i class="fas fa-home"></i> Logga in
+      </a>
+      <a *ngIf="authService.isLoggedIn()" (click)="logout()" class="icon-link">
+        <i class="fas fa-sign-out-alt"></i> Logga ut
+      </a>
+    </div> <!-- end of login container -->
+
+    <div class="wishlist-container">
+      <a href="#" class="icon-link"><i class="fas fa-heart"></i> Önskelista</a>
+    </div>
+      
+    <div class="find-your-store-container">
+       <a href="#" class="icon-link"><i class="fas fa-store"></i> Hitta din butik</a>
+    </div>
+
+    <div class="hamburger" *ngIf="!menuOpen" (click)="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="close" *ngIf="menuOpen" (click)="toggleMenu()">
+      <i class="fas fa-times"></i> 
+    </div>
+
+  </div>
+  <div id="bottom-bar" class="bottom-bar">
+    <a href="#" class="nav-link">Städa & tvätta</a>
+    <a href="#" class="nav-link">Äta & dricka</a>
+    <a href="#" class="nav-link">Skönhet & hälsa</a>
+    <a href="#" class="nav-link">Party</a>
+    <a href="#" class="nav-link">Trädgård</a>
+    <a href="#" class="nav-link">Barn & lek</a>
+    <a href="#" class="nav-link">Husdjur</a>
+    <a href="#" class="nav-link">Kläder & accessoarer</a>
+    <a href="#" class="nav-link">Ordning & reda</a>
+    <a href="#" class="nav-link">Kök & hushåll</a>
+    <a href="#" class="nav-link">Inredning</a>
+  </div>
+</div>
