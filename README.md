@@ -9,6 +9,10 @@ Team: @gerlov, @CJPob, @elianrozgar, @juliazubko
 Original repo: https://github.com/gerlov/project_two  
 
 
+-- development branch:  `main` 
+-- deployment branch: `fully_deployed`
+
+
 
 https://github.com/user-attachments/assets/8394da1f-cd01-41de-974b-57e52baca642
 
