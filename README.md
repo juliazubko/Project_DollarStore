@@ -1,7 +1,7 @@
 # DollarStore Customer Club
 
 
-Customer Club for DollarStore is a personal online receipt management SaaS solution developed by KTH students as a practical part of the Project Course in Software Development (HI1039 VT24) at KTH, in collaboration with DollarStore as stakeholders.
+Customer Club for DollarStore is a personal online receipt management SaaS solution developed by [KTH](https://www.kth.se/en) students as a practical part of the Project Course in Software Development (HI1039 VT24) at KTH, in collaboration with [DollarStore](https://www.dollarstore.se/) as stakeholders.
 
 Team: @gerlov, @CJPob, @elianrozgar, @juliazubko 
 
@@ -55,8 +55,9 @@ Our APIs support comprehensive customer and receipt management functions, includ
 
 `docker-compose up --build -d`
 
-- This process might take 2-3 minutes for the initial setup.
-Once the containers are up and running, open a web browser and navigate to:
+This process might take 2-3 minutes for the initial setup.
+
+- Once the containers are up and running, open a web browser and navigate to:
 
 `http://localhost:4200`
 
