@@ -4,6 +4,7 @@
 Customer Club for DollarStore is a personal online receipt management SaaS solution developed by [KTH](https://www.kth.se/en) students as a practical part of the Project Course in Software Development (HI1039 VT24) at KTH, in collaboration with [DollarStore](https://www.dollarstore.se/) as stakeholders.
 
 Team: @gerlov, @CJPob, @elianrozgar, @juliazubko 
+
 Original repo: https://github.com/gerlov/project_two  
 
 
