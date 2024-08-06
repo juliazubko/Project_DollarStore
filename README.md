@@ -23,11 +23,11 @@ Future plans for the Customer Club include developing a CRM application and a pa
 
 ## Tech Stack 
 
-- Orchestration and Scaling: **Docker** and **Kubernetes**
 - Database: **PostgreSQL**
 - Backend: **Java** / **Spring Boot**
 - Frontend: **Angular**
 - Security: Client-side security via **Angular Route Guards** and backend protection through **Spring Security**
+- Orchestration and Scaling: **Docker** and **Kubernetes**
 - Hosting: **Google Cloud** via **Google Kubernetes Engine (GKE)**
 
 ## Structure 
@@ -46,9 +46,9 @@ Our APIs support comprehensive customer and receipt management functions, includ
 
 ## Hosting and Deployment
 
-- Google Kubernetes Engine (GKE): Manages the deployment and scaling of the application's containerized architecture.
 - Docker: Packages the application in lightweight containers, ensuring consistency across environments.
 - Kubernetes: Automates deployment, manages container lifecycles, and supports scaling and load balancing.
+- Google Kubernetes Engine (GKE): Manages the deployment and scaling of the application's containerized architecture.
 
 ## Try Out the App 
 
